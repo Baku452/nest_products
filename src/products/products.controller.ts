@@ -30,10 +30,7 @@ export class ProductsController {
   @Get('/')
   async getProducts(@Res() res) {
     const products = await this.productsService.getProducts();
-    res.status(HttpStatus.OK).json({
-      message: 'Products',
-      products,
-    });
+    res.status(HttpStatus.OK).json(products);
   }
 
   @Get('/:productID')
